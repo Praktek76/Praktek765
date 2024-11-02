@@ -8,19 +8,75 @@
     <style>
       .gradasi {
         background-image: linear-gradient(
-          to bottom right,
-          rgb(255, 0, 0),
-          rgb(255, 255, 255)
+          rgb(0, 0, 0),
+          rgb(255, 255, 255),
         );
+      }
+      /* Tema terang */
+      body.light {
+        background-color: white;
+        color: black;
+      }
+
+      .navbar.light,
+      .accordion-item.light,
+      .accordion-button.light,
+      .accordion-body.light {
+        background-color: white;
+        color: black;
+      }
+
+      .navbar .nav-link.light,
+      .navbar-brand.light {
+        color: black !important;
+      }
+
+      /* Tema gelap */
+      body.dark {
+        background-color: #121212;
+        color: white;
+      }
+
+      .navbar.dark,
+      .accordion-item.dark,
+      .accordion-button.dark,
+      .accordion-body.dark {
+        background-color: #333;
+        color: white;
+      }
+
+      .accordion-body.dark {
+        background-color: #444;
+        color: white;
+      }
+
+      .navbar .nav-link.dark,
+      .navbar-brand.dark {
+        color: white !important;
+      }
+
+      /* Warna dropdown menu responsif */
+      .navbar-collapse.dark {
+        background-color: #333;
+      }
+
+      /* Warna teks dan latar tombol hamburger saat mode gelap */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28155, 155, 155, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
+      }
+      .navbar-toggler.dark .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
       }
     </style>
   </head>
-  <body class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <body class="container light">
+    <nav class="navbar navbar-expand-lg light gradasi">
       <div class="container-fluid">
-        <a class="navbar-brand" href="Halaman-utama-light.html">Halaman utama</a>
+        <a class="navbar-brand light" href="Halaman-utama-light.html"
+          >Halaman utama</a
+        >
         <button
-          class="navbar-toggler"
+          class="navbar-toggler light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -30,24 +86,20 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse light" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="Manfaat-terapi-light.html"
+              <a class="nav-link light" href="Manfaat-terapi-light.html"
                 >Manfaat terapi</a
               >
             </li>
-          </ul>
-          <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="cara-kerja-terapi-light.html"
+              <a class="nav-link light" href="cara-kerja-terapi-light.html"
                 >Cara kerja terapi</a
               >
             </li>
-          </ul>
-          <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="Asal-usul-terapi-light.html"
+              <a class="nav-link light" href="Asal-usul-terapi-light.html"
                 >Asal usul terapi</a
               >
             </li>
@@ -55,34 +107,23 @@
         </div>
       </div>
     </nav>
-    <br />
-    <div class="dropdown float-end jarak-atas">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Latar
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item" href="Asal-usul-terapi-light.html">Light</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="Asal-usul-terapi-dark.html">Dark</a>
-        </li>
-      </ul>
+
+    <div class="dropdown float-end mt-3">
+      <label for="theme-select" class="me-2">Pilih Mode Warna:</label>
+      <select id="theme-select" class="btn btn-primary">
+        <option class="dropdown-item light" value="light">Terang</option>
+        <option class="dropdown-item dark" value="dark">Gelap</option>
+      </select>
     </div>
-    <br /><br />
+
     <div
-      class="accordion jarak-atas jarak-bawah shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+      class="accordion mt-5 shadow-lg p-3 mb-5 rounded"
       id="accordionExample"
     >
-      <div class="accordion-item">
+      <div class="accordion-item light">
         <h2 class="accordion-header">
           <button
-            class="accordion-button"
+            class="accordion-button light"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOne"
@@ -97,20 +138,20 @@
           class="accordion-collapse collapse show"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">
+          <div class="accordion-body light">
             Asal usul akupunktur berasal dari Tiongkok kuno dan dapat ditelusuri
             kembali lebih dari 2.500 tahun yang lalu, meskipun beberapa bukti
-            menunjukkan praktik serupa mungkin <strong>sudah ada sejak Zaman Batu.</strong> Pada
-            masa awal, nenek moyang bangsa Tiongkok menggunakan batu tajam atau
-            tulang binatang untuk menstimulasi titik-titik tertentu pada tubuh,
-            yang dikenal sebagai "bian shi" atau alat batu penyembuhan. Praktek
-            ini berkembang seiring waktu dengan penggunaan jarum logam untuk
-            menggantikan alat-alat dari batu dan tulang.
-            <br /><br />
-            Akupunktur pertama kali didokumentasikan dalam *Huangdi Neijing*
-            atau The Yellow Emperor's Classic of Internal Medicine, yang
-            diyakini ditulis sekitar abad ke-2 SM. Buku ini adalah salah satu
-            teks kedokteran tertua di dunia dan memberikan fondasi bagi praktik
+            menunjukkan praktik serupa mungkin
+            <strong>sudah ada sejak Zaman Batu.</strong> Pada masa awal, nenek
+            moyang bangsa Tiongkok menggunakan batu tajam atau tulang binatang
+            untuk menstimulasi titik-titik tertentu pada tubuh, yang dikenal
+            sebagai "bian shi" atau alat batu penyembuhan. Praktek ini
+            berkembang seiring waktu dengan penggunaan jarum logam untuk
+            menggantikan alat-alat dari batu dan tulang. <br /><br />
+            Akupunktur pertama kali didokumentasikan dalam Huangdi Neijing atau
+            The Yellow Emperor's Classic of Internal Medicine, yang diyakini
+            ditulis sekitar abad ke-2 SM. Buku ini adalah salah satu teks
+            kedokteran tertua di dunia dan memberikan fondasi bagi praktik
             akupunktur serta prinsip-prinsip dasar pengobatan tradisional
             Tiongkok. Dalam perkembangan selanjutnya, metode ini semakin meluas
             ke Asia Timur seperti Jepang dan Korea, dan akhirnya ke seluruh
@@ -120,26 +161,24 @@
             memahami mekanisme ilmiah di balik manfaatnya.
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button collapsed"
+            class="accordion-button light"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
           >
             Asal usul herbal tempel
           </button>
         </h2>
         <div
-          id="collapseTwo"
-          class="accordion-collapse collapse"
+          id="collapseOne"
+          class="accordion-collapse collapse show"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">
+          <div class="accordion-body light">
             Herbal tempel atau koyo memiliki asal usul dari tradisi pengobatan
             tradisional Tiongkok dan Jepang yang sudah berlangsung ribuan tahun.
             Di Tiongkok kuno, penggunaan ramuan herbal untuk meredakan nyeri dan
@@ -161,26 +200,24 @@
             sekarang.
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button collapsed"
+            class="accordion-button light"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
           >
             Asal usul TDP/IF
           </button>
         </h2>
         <div
-          id="collapseThree"
-          class="accordion-collapse collapse"
+          id="collapseOne"
+          class="accordion-collapse collapse show"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">
+          <div class="accordion-body light">
             Therapeutic Diathermy Procedure (TDP) atau Infrared Therapy (IF)
             adalah metode terapi yang berkembang dari pengobatan tradisional
             Tiongkok. Pada 1970-an, Dr. Gou Wenbin, seorang peneliti dan
@@ -200,10 +237,61 @@
           </div>
         </div>
       </div>
+      <!-- Tambahkan elemen accordion lainnya sesuai kebutuhan -->
     </div>
-    <p class="mt-5 mb-3 text-body-secondary jarak-bawah text-center">
-      &copy; 31-10-2024
-    </p>
+
+    <p class="mt-5 mb-3 text-center">&copy; 31-10-2024</p>
+
+    <script>
+      // Mengambil elemen dropdown untuk memilih tema
+      const themeSelect = document.getElementById("theme-select");
+
+      // Fungsi untuk menerapkan tema ke semua elemen yang perlu diubah
+      function applyTheme(theme) {
+        document.body.className = theme;
+        document.querySelector(
+          ".navbar"
+        ).className = `navbar navbar-expand-lg ${theme}`;
+        document.querySelector(
+          ".navbar-brand"
+        ).className = `navbar-brand ${theme}`;
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((link) => (link.className = `nav-link ${theme}`));
+        document.querySelector(
+          ".navbar-collapse"
+        ).className = `collapse navbar-collapse ${theme}`;
+        document.querySelector(
+          ".navbar-toggler"
+        ).className = `navbar-toggler ${theme}`;
+        document
+          .querySelectorAll(".accordion-item")
+          .forEach((item) => (item.className = `accordion-item ${theme}`));
+        document
+          .querySelectorAll(".accordion-button")
+          .forEach(
+            (button) => (button.className = `accordion-button ${theme}`)
+          );
+        document
+          .querySelectorAll(".accordion-body")
+          .forEach((body) => (body.className = `accordion-body ${theme}`));
+        themeSelect.className = `btn btn-primary ${theme}`;
+      }
+
+      // Cek tema yang tersimpan di localStorage dan terapkan saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+        themeSelect.value = savedTheme;
+      });
+
+      // Simpan tema pilihan pengguna dan terapkan
+      themeSelect.addEventListener("change", (event) => {
+        const selectedTheme = event.target.value;
+        localStorage.setItem("theme", selectedTheme);
+        applyTheme(selectedTheme);
+      });
+    </script>
 
     <script src="bootstrap.bundle.min.js"></script>
   </body>
